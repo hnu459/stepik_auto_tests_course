@@ -50,6 +50,15 @@ class TestGuestAddToBasketFromProductPage():
         page.open()
         page.should_be_login_link()
     
+     @pytest.mark.need_review
+    def test_guest_cant_see_product_in_basket_opened_from_product_page(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+        page = BasketPage(browser, link)
+        page.open()
+        page.should_go_to_basket_page()
+        page.should_be_product_in_basket
+        page.should_be_product_is_basket
+        
 @pytest.mark.user_basket
 class TestUserAddToBasketFromProductPage():
     @pytest.fixture(scope="function", autouse=True)    
