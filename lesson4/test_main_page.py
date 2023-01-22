@@ -25,5 +25,5 @@ class TestLoginFromMainPage():
         page = BasketPage(browser, link)
         page.open()
         page.should_go_to_basket_page()
-        page.should_be_product_in_basket
-        page.should_be_product_is_basket
+        page.should_be_product_in_basket()
+        page.should_be_product_is_basket()
